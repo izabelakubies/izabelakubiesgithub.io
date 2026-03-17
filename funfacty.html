@@ -3,66 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fun Facty ze světa</title>
+    <title>Zajímavosti ze světa | Izabela Kubies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #fffbe6; /* Jemná žlutá */
-            color: #2d3436;
+        /* --- Reset a Základní nastavení --- */
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); /* Temné, hluboké pozadí */
+            color: #ecf0f1;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        /* --- Hlavní kontejner --- */
+        .container {
+            width: 100%;
+            max-width: 900px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .container {
-            max-width: 600px;
-            background: white;
-            padding: 30px;
+
+        /* --- Záhlaví stránky --- */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #74b9ff, #fff, #00cec9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #00b894;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* --- Grid s fakty --- */
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responzivní mřížka */
+            gap: 25px;
+            width: 100%;
+        }
+
+        /* --- Kartička s faktem (Glassmorphism + Neon) --- */
+        .fact-card {
+            background: rgba(255, 255, 255, 0.05); /* Skleněný efekt */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            transition: all 0.3s ease-out;
+            position: relative;
+            overflow: hidden;
         }
-        h1 { color: #f39c12; text-align: center; }
-        .fact-item {
-            background: #fdf2e9;
-            margin: 15px 0;
-            padding: 15px;
-            border-left: 5px solid #f39c12;
-            border-radius: 5px;
+
+        /* Efekt při najetí myší na kartičku */
+        .fact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 206, 201, 0.2);
+            border: 1px solid rgba(0, 206, 201, 0.3);
         }
-        .back-link {
-            margin-top: 20px;
+
+        /* Ikonka v horním rohu */
+        .fact-icon {
+            font-size: 2.5rem;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            opacity: 0.1;
+            transition: opacity 0.3s ease;
+        }
+
+        .fact-card:hover .fact-icon {
+            opacity: 1; /* Ikonka se zvýrazní při najetí */
+            color: #00cec9;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #bdc3c7;
+            font-weight: 300;
+        }
+
+        /* --- Tlačítko Zpět (Styl ladící s hlavní stránkou) --- */
+        .back-button {
+            display: inline-block;
+            margin-top: 60px;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #0984e3 0%, #00cec9 100%);
+            color: white;
             text-decoration: none;
-            color: #0984e3;
-            font-weight: bold;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.3s ease-out;
+            box-shadow: 0 10px 20px rgba(9, 132, 227, 0.3);
         }
-        .back-link:hover { text-decoration: underline; }
+
+        .back-button:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 15px 25px rgba(9, 132, 227, 0.5);
+            background: linear-gradient(135deg, #00cec9 0%, #00b894 100%);
+        }
+
+        /* --- Responzivita pro menší displeje --- */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .facts-grid { grid-template-columns: 1fr; }
+            .fact-card { padding: 25px; }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Věděli jste, že...? 🌍</h1>
+        <header>
+            <h1>Zajímavosti ze světa</h1>
+            <div class="subtitle">Věděli jste, že... ? 🔬</div>
+        </header>
 
-        <div class="fact-item">
-            <strong>Diamantový déšť:</strong> Na Saturnu a Jupiteru je takový tlak, že tam doslova prší diamanty.
+        <div class="facts-grid">
+            
+            <div class="fact-card">
+                <div class="fact-icon">🧪</div>
+                <h2>Diamantový déšť</h2>
+                <p>Na Jupiteru a Saturnu je tlak v atmosféře tak obrovský, že dokáže proměnit uhlík v déšť z diamantů. Vědci odhadují, že tam ročně spadne až 1000 tun diamantů.</p>
+            </div>
+
+            <div class="fact-card">
+                <div class="fact-icon">🐙</div>
+                <h2>Chobotnice mají tři srdce</h2>
+                <p>Chobotnice mají jedno hlavní srdce, které pumpuje krev do celého těla, a dvě menší srdce, která pumpují krev do žáber. Také mají devět mozků (jeden centrální a menší mozek v každém chapadle).</p>
+            </div>
+
+            <div class="fact-card">
+                <div class="fact-icon">☕</div>
+                <h2>Barva vesmíru</h2>
+                <p>Průměrná barva celého vesmíru má svůj název – jmenuje se "Cosmic Latte" (kosmické latté). Je to velmi světle béžová barva.</p>
+            </div>
+
+            <div class="fact-card">
+                <div class="fact-icon">🧬</div>
+                <h2>Vaše DNA je delší, než si myslíte</h2>
+                <p>Kdyby se rozvinula všechna DNA z jediné vaší buňky, měřila by asi dva metry. Kdyby se rozvinula DNA ze všech buněk vašeho těla, dosáhla by od Země k Pluto a zpět... 6krát!</p>
+            </div>
+
+            <div class="fact-card">
+                <div class="fact-icon">🍯</div>
+                <h2>Med se nikdy nezkazí</h2>
+                <p>Archeologové našli v egyptských hrobkách hrnce s medem staré přes 3000 let, které byly stále jedlé. Med má přirozené konzervační vlastnosti, díky kterým se v něm nedaří bakteriím.</p>
+            </div>
+
+            <div class="fact-card">
+                <div class="fact-icon">🐘</div>
+                <h2>Sloni neumí skákat</h2>
+                <p>Sloni jsou jediní savci na světě, kteří neumí skákat. Jejich kosti a anatomie nohou jsou navrženy tak, aby nesly obrovskou váhu, nikoli aby absorbovaly náraz ze skoku.</p>
+            </div>
+
         </div>
 
-        <div class="fact-item">
-            <strong>Včelí matematika:</strong> Včely umí počítat do čtyř a rozumí konceptu nuly.
-        </div>
-
-        <div class="fact-item">
-            <strong>Nesmrtelná medúza:</strong> Existuje druh medúzy (Turritopsis dohrnii), který se dokáže vrátit do stadia polypu a začít svůj životní cyklus znovu.
-        </div>
-
-        <div class="fact-item">
-            <strong>Barva vesmíru:</strong> Průměrná barva celého vesmíru má svůj název – jmenuje se "Cosmic Latte" (kosmické latté).
-        </div>
-
-        <center>
-            <a href="index.html" class="back-link">← Zpět na profil Izabely</a>
-        </center>
+        <a href="index.html" class="back-button">
+            ← Zpět na profil Izabely
+        </a>
     </div>
 
 </body>

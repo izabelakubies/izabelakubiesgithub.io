@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Izabela Kubies | Osobní stránka</title>
     <style>
-        /* Základní nastavení */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -17,8 +16,6 @@
             align-items: center;
             min-height: 100vh;
         }
-
-        /* Karta s obsahem */
         .card {
             background: white;
             padding: 2rem;
@@ -26,26 +23,9 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             max-width: 500px;
             text-align: center;
-            border-top: 5px solid #00b894; /* "Chemická" zelená */
+            border-top: 5px solid #00b894;
         }
-
-        h1 {
-            color: #2d3436;
-            margin-bottom: 0.5rem;
-            font-size: 2.2rem;
-        }
-
-        .subtitle {
-            font-style: italic;
-            color: #636e72;
-            margin-bottom: 1.5rem;
-        }
-
-        p {
-            margin-bottom: 1rem;
-        }
-
-        /* Zvýraznění zájmů */
+        h1 { color: #2d3436; margin-bottom: 0.5rem; }
         .highlight {
             background: #e8f8f5;
             padding: 2px 8px;
@@ -53,32 +33,32 @@
             font-weight: bold;
             color: #0984e3;
         }
-
-        footer {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: #b2bec3;
+        /* Styl pro odkaz/tlačítko */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #0984e3;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s;
+            font-weight: bold;
         }
+        .btn:hover { background-color: #00cec9; }
+        footer { margin-top: 2rem; font-size: 0.8rem; color: #b2bec3; }
     </style>
 </head>
 <body>
-
     <div class="card">
         <h1>Izabela Kubies</h1>
-        <p class="subtitle">Studentka & milovnice chemie 🧪</p>
-
         <p>Ahoj! Jmenuji se <strong>Izabela Kubies</strong>.</p>
-
         <p>Je mi 19 let a jsem slečna, která má ráda <span class="highlight">chemii</span>.</p>
-
         <p>Zajímám se o vědu, experimenty a objevování nových věcí.</p>
+        
+        <a href="funfacty.html" class="btn">Zajímavosti ze světa ✨</a>
 
-        <p>Ve volném čase ráda čtu, učím se nové věci a trávím čas s přáteli.</p>
-
-        <footer>
-            Děkuji za návštěvu mé osobní stránky!
-        </footer>
+        <footer>Děkuji za návštěvu!</footer>
     </div>
-
 </body>
 </html>

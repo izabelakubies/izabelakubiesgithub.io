@@ -3,49 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moje oblíbené místo - Stromy</title>
+    <title>Čtvrtletní práce | Stromy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #1a3c1a 50%, #0f0c29 100%);
+            color: #ecf0f1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            background: linear-gradient(to right, #2ecc71, #27ae60);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        /* Skleněný kontejner pro info a odkaz */
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
             max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f9f4;
+            width: 100%;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            text-align: center;
         }
-        h1 { color: #2d5a27; }
-        .odkaz-box {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 5px solid #2d5a27;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+        .info-card p {
+            font-size: 1.1rem;
+            color: #bdc3c7;
+            margin-bottom: 15px;
         }
-        a { color: #2d5a27; font-weight: bold; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+
+        .external-link {
+            display: inline-block;
+            color: #2ecc71;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid #2ecc71;
+            padding: 8px 20px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .external-link:hover {
+            background: #2ecc71;
+            color: #0f0c29;
+            box-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
+        }
+
+        /* Stylový rámeček pro PDF */
+        .pdf-container {
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
         iframe {
-            border: 2px solid #2d5a27;
-            border-radius: 4px;
+            width: 100%;
+            height: 700px;
+            border-radius: 15px;
+            border: none;
+        }
+
+        /* Tlačítko zpět */
+        .back-btn {
+            margin-top: 40px;
+            text-decoration: none;
+            color: #74b9ff;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: #fff;
+        }
+
+        /* Dekorace na pozadí */
+        .glow {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: rgba(46, 204, 113, 0.15);
+            filter: blur(100px);
+            border-radius: 50%;
+            z-index: -1;
         }
     </style>
 </head>
 <body>
 
-    <h1>Čtvrtletní práce: Moje oblíbené místo</h1>
+    <div class="glow" style="top: 10%; left: 5%;"></div>
+    <div class="glow" style="bottom: 10%; right: 5%;"></div>
 
-    <div class="odkaz-box">
-        <p>Zajímá vás více o ochraně našich lesů? Navštivte stránky 
-            <a href="https://www.nps.gov/trees/index.htm" target="_blank">nadace pro ochranu stromů</a> 
-            nebo české <a href="https://www.lesycr.cz" target="_blank">Lesy ČR</a>.
-        </p>
+    <h1>🌲 Čtvrtletní práce</h1>
+
+    <div class="info-card">
+        <p>Tento dokument se podrobně věnuje biologii, významu a ochraně stromů v naší krajině.</p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://www.nps.gov/trees/index.htm" class="external-link" target="_blank">Nadace pro stromy</a>
+            <a href="https://www.lesycr.cz" class="external-link" target="_blank">Lesy ČR</a>
+        </div>
     </div>
 
-    <iframe src="čtvrtletní_práce (1).pdf" width="100%" height="600px"></iframe>
+    <div class="pdf-container">
+        <iframe src="čtvrtletní_práce (1).pdf"></iframe>
+    </div>
 
-    <p style="margin-top: 20px;">
-        <a href="index.html">← Zpět na úvodní stránku</a>
-    </p>
+    <a href="index.html" class="back-btn">
+        <span>←</span> Zpět na profil Izabely
+    </a>
 
 </body>
 </html>

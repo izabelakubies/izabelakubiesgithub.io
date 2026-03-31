@@ -6,6 +6,7 @@
     <title>Izabela Kubies | Profil</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ... (ponechávám tvé původní styly) ... */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -20,7 +21,6 @@
             position: relative;
         }
 
-        /* Dekorativní prvky */
         .bg-shape {
             position: absolute;
             border-radius: 50%;
@@ -30,7 +30,6 @@
         .shape1 { width: 400px; height: 400px; background: rgba(0, 184, 148, 0.2); top: -100px; left: -100px; }
         .shape2 { width: 300px; height: 300px; background: rgba(9, 132, 227, 0.2); bottom: -50px; right: 10%; }
 
-        /* Karta */
         .profile-container {
             background: rgba(255, 255, 255, 0.07);
             backdrop-filter: blur(20px);
@@ -61,34 +60,45 @@
         p { color: #bdc3c7; line-height: 1.6; margin-bottom: 15px; }
         .highlight { color: #fff; font-weight: 600; }
 
-        /* VYLEPŠENÉ TLAČÍTKO S ODKAZEM */
+        /* Kontejner pro tlačítka pod sebou */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
         .cta-button {
             display: inline-block;
-            margin-top: 30px;
-            padding: 16px 40px;
-            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            padding: 14px 30px;
             color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 1px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Styl pro první tlačítko (Zelené) */
+        .btn-fun {
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
             box-shadow: 0 10px 20px rgba(0, 184, 148, 0.3);
         }
 
-        /* Efekt při najetí myší */
-        .cta-button:hover {
-            transform: scale(1.08) translateY(-5px);
-            box-shadow: 0 15px 25px rgba(0, 184, 148, 0.5);
-            background: linear-gradient(135deg, #00cec9 0%, #0984e3 100%);
+        /* Styl pro druhé tlačítko (Modré) */
+        .btn-cpp {
+            background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%);
+            box-shadow: 0 10px 20px rgba(9, 132, 227, 0.3);
         }
 
-        /* Efekt při kliknutí */
-        .cta-button:active {
-            transform: scale(0.95);
+        .cta-button:hover {
+            transform: scale(1.05) translateY(-3px);
+            filter: brightness(1.1);
         }
+
+        .cta-button:active { transform: scale(0.95); }
 
         footer { margin-top: 40px; font-size: 0.75rem; color: rgba(255,255,255,0.3); }
 
@@ -111,11 +121,17 @@
         <p>Ahoj! Jmenuji se <span class="highlight">Izabela</span>.</p>
         <p>Je mi 19 let a věřím, že svět je jedna velká <span class="highlight">laboratoř</span> plná fascinujících tajemství.</p>
 
-        <a href="funfacty.html" class="cta-button">
-            Prozkoumat Fun Facty 🧪
-        </a>
+        <div class="button-group">
+            <a href="funfacty.html" class="cta-button btn-fun">
+                Prozkoumat Fun Facty 🧪
+            </a>
 
-        <footer>© 2024 Izabela Kubies</footer>
+            <a href="cpp.html" class="cta-button btn-cpp">
+                Čtvrtletní práce: Stromy 🌲
+            </a>
+        </div>
+
+        <footer>© 2026 Izabela Kubies</footer>
     </div>
 
 </body>
